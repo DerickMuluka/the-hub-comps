@@ -1,0 +1,64 @@
+/* FAQ Page Styles */
+.faq-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/frontend/assets/images/background/faq-hero.jpg') no-repeat center center/cover;
+}
+
+.faq-main {
+    padding: var(--space-xl) 0;
+    background-color: var(--light-color);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-question {
+    padding: var(--space-md);
+    background-color: var(--primary-color);
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background-color: var(--secondary-color);
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.faq-toggle {
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.faq-answer {
+    padding: 0 var(--space-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq-item.active .faq-answer {
+    padding: var(--space-md);
+    max-height: 500px;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
