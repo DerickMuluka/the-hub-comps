@@ -1,0 +1,117 @@
+/* Home Page Specific Styles */
+.services-preview {
+    padding: var(--space-xl) 0;
+    background-color: var(--white);
+}
+
+.courses-preview {
+    padding: var(--space-xl) 0;
+    background-color: var(--light-color);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.benefit-card {
+    background-color: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--space-md);
+}
+
+.process-section {
+    padding: var(--space-xl) 0;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.process-section .section-title {
+    color: var(--white);
+}
+
+.process-section .section-title span {
+    color: var(--secondary-color);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.process-step {
+    text-align: center;
+    padding: var(--space-md);
+    background-color: rgba(255,255,255,0.1);
+    border-radius: var(--border-radius-md);
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255,255,255,0.2);
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto var(--space-md);
+}
+
+.process-step h3 {
+    color: var(--white);
+    margin-bottom: var(--space-sm);
+}	
+
+.courses-filter {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    margin-bottom: var(--space-lg);
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: var(--space-xs) var(--space-md);
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+
