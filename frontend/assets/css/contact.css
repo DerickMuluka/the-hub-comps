@@ -1,0 +1,115 @@
+/* Contact Page Styles */
+.contact-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/frontend/assets/images/background/contact-hero.jpg') no-repeat center center/cover;
+}
+
+.contact-main {
+    padding: var(--space-xl) 0;
+    background-color: var(--light-color);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+}
+
+.contact-info {
+    background-color: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact-info h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-md);
+}
+
+.contact-details {
+    margin-top: var(--space-lg);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.contact-detail i {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.contact-form {
+    background-color: var(--white);
+    padding: var(--space-lg);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius-sm);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9rem;
+    margin-top: var(--space-xs);
+}
+
+.alert {
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.alert-success {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: var(--success-color);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.contact-map {
+    margin-top: var(--space-xl);
+    height: 400px;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
