@@ -1,0 +1,792 @@
+/* RESPONSIVE.CSS - UPDATED VERSION */
+/* ====================== */
+/* NAVIGATION FIXES FOR ALL SCREEN SIZES */
+/* ====================== */
+
+/* Ensure proper navigation display on all screen sizes */
+.main-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    margin: 0 var(--space-md);
+}
+
+.main-navigation ul {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--space-sm);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+    justify-content: center;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.main-navigation li {
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.main-navigation a {
+    display: block;
+    padding: 10px 12px;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.main-navigation a:hover,
+.main-navigation a.active {
+    color: var(--secondary-color);
+    border-bottom-color: var(--secondary-color);
+}
+
+/* Additional centering for course and service detail pages */
+.course-detail .container,
+.service-detail .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-main-content,
+.service-main-content {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.course-main-content h2,
+.service-main-content h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.course-main-content p,
+.service-main-content p {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* MOBILE MENU STYLES */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1100;
+    position: relative;
+    transition: var(--transition);
+}
+
+.mobile-menu-toggle:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 992px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1100;
+    }
+    
+    .mobile-navigation {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        height: 100vh;
+        background: var(--white);
+        box-shadow: var(--shadow-lg);
+        z-index: 1050;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        overflow-y: auto;
+    }
+    
+    .mobile-navigation.active {
+        right: 0;
+    }
+    
+    .mobile-navigation ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        white-space: normal;
+    }
+    
+    .mobile-navigation li {
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .mobile-navigation a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--dark-color);
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        border-bottom: none;
+        white-space: normal;
+    }
+    
+    .mobile-navigation a:hover {
+        background-color: rgba(0,0,0,0.05);
+        color: var(--secondary-color);
+        padding-left: 25px;
+    }
+    
+    .mobile-navigation a.active {
+        color: var(--secondary-color);
+        background-color: rgba(0,0,0,0.03);
+    }
+    
+    .mobile-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1040;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    /* Hide desktop nav on mobile */
+    .main-navigation {
+        display: none;
+    }
+    
+    /* Mobile nav header */
+    .mobile-nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: var(--primary-color);
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        max-width: 320px;
+        z-index: 1051;
+        height: 70px;
+        transition: right 0.3s ease;
+    }
+
+    .mobile-navigation.active .mobile-nav-header {
+        right: 0;
+    }
+
+    .mobile-logo {
+        width: 100px;
+        height: auto;
+        display: block;
+    }
+
+    .mobile-menu-close {
+        background: none;
+        border: none;
+        color: var(--white);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 5px;
+        display: none;
+    }
+    
+    .mobile-navigation.active .mobile-menu-close {
+        display: block;
+    }
+    
+    .mobile-nav-footer {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 20px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+    }
+    
+    .btn-block {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ====================== */
+/* OTHER RESPONSIVE STYLES */
+/* ====================== */
+
+@media (max-width: 1400px) {
+    .main-navigation a {
+        font-size: 0.9rem;
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .logo-container {
+        width: 160px;
+    }
+    
+    .main-header .container {
+        padding: 0 15px;
+    }
+    
+    .main-navigation a {
+        font-size: 0.85rem;
+        padding: 8px 6px;
+    }
+
+    .header-cta .btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .main-navigation a {
+        font-size: 0.8rem;
+        padding: 6px 5px;
+    }
+    
+    .header-cta .btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-container {
+        width: 140px;
+    }
+    
+    .header-cta {
+        display: none;
+    }
+    
+    /* Ensure navigation is visible on medium screens */
+    .main-navigation {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-container {
+        width: 120px;
+    }
+    
+    .mobile-logo {
+        width: 90px;
+    }
+    
+    .hero {
+        min-height: 500px;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+    
+    .whatsapp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .whatsapp-tooltip {
+        display: none;
+    }
+    
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    .section-title::after {
+        width: 60px;
+    }
+    
+    .cta-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-btns .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Hide desktop nav on small screens */
+    .main-navigation {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-container {
+        width: 100px;
+    }
+    
+    .mobile-logo {
+        width: 80px;
+    }
+    
+    .testimonial {
+        min-width: 280px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-about,
+    .footer-links,
+    .footer-services,
+    .footer-contact {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .footer-links ul,
+    .footer-services ul {
+        align-items: center;
+    }
+    
+    .footer-contact li {
+        justify-content: center;
+    }
+    
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group label {
+        text-align: left;
+    }
+    
+    .mobile-navigation {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .mobile-nav-header {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        width: 90px;
+    }
+    
+    .mobile-logo {
+        width: 70px;
+    }
+    
+    .mobile-menu-toggle {
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .logo-container {
+        width: 80px;
+    }
+    
+    .mobile-logo {
+        width: 60px;
+    }
+}
+
+/* Enhanced Mobile Navigation Styling */
+@media (max-width: 992px) {
+    .mobile-navigation {
+        background: var(--white);
+    }
+    
+    .mobile-navigation a {
+        color: var(--dark-color);
+    }
+    
+    .mobile-navigation a:hover {
+        background-color: rgba(0,0,0,0.05);
+        color: var(--secondary-color);
+    }
+    
+    .mobile-navigation a.active {
+        color: var(--secondary-color);
+        background-color: rgba(0,0,0,0.03);
+    }
+    
+    .mobile-nav-footer {
+        background-color: rgba(0,0,0,0.02);
+    }
+}
+
+/* Service Process Steps Responsiveness */
+.service-process {
+    padding: var(--space-xl) 0;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.process-step {
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    position: relative;
+}
+
+.process-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: var(--secondary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: var(--space-md);
+}
+
+.process-step h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+    .process-steps {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+    
+    .process-step {
+        padding: var(--space-lg) var(--space-md);
+    }
+}
+
+/* Computer Repair Page Specific Styles */
+.service-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-xl);
+}
+
+.service-description h2 {
+    margin-bottom: var(--space-md);
+}
+
+.service-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .service-description {
+        text-align: left;
+    }
+    
+    .service-description h2 {
+        text-align: center;
+    }
+}
+
+/* Ensure proper text alignment on smaller screens */
+@media (max-width: 991px) {
+    .course-hero .container,
+    .service-hero .container {
+        text-align: center;
+    }
+    
+    .course-hero h1,
+    .service-hero h1,
+    .course-hero p,
+    .service-hero p {
+        text-align: center;
+    }
+}
+
+/* Ensure navigation is visible on larger screens */
+@media (min-width: 993px) {
+    .mobile-menu-toggle {
+        display: none;
+    }
+    
+    .mobile-navigation {
+        display: none;
+    }
+    
+    .mobile-overlay {
+        display: none;
+    }
+    
+    .main-navigation {
+        display: flex;
+    }
+}
+
+/* Tablet view adjustments */
+@media (min-width: 769px) and (max-width: 992px) {
+    .main-navigation {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .logo-container {
+        width: 150px;
+    }
+}
+
+/* Ensure proper logo scaling */
+.logo-container {
+    transition: all 0.3s ease;
+}
+
+.logo, .mobile-logo {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navigation optimization for very large screens */
+@media (min-width: 1200px) {
+    .main-navigation a {
+        font-size: 1.1rem;
+        padding: 12px 16px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .main-navigation a {
+        font-size: 1.2rem;
+        padding: 14px 18px;
+    }
+}
+
+/* Fix for navigation items wrapping - UPDATED FOR BETTER HANDLING */
+.main-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.main-navigation {
+    flex: 1;
+    margin: 0 var(--space-md);
+    min-width: 0; /* Allows flex item to shrink below content size */
+    max-width: 100%;
+}
+
+.main-navigation ul {
+    overflow: visible;
+    justify-content: center;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    white-space: nowrap;
+}
+
+.header-cta {
+    flex-shrink: 0;
+    display: flex;
+    gap: var(--space-sm);
+    white-space: nowrap;
+}
+
+/* Additional fixes for very wide screens */
+@media (min-width: 1600px) {
+    .main-header .container {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+    
+    .main-navigation a {
+        font-size: 1.05rem;
+        padding: 12px 16px;
+    }
+}
+
+/* Special handling for when navigation items might overflow */
+@media (min-width: 993px) {
+    .main-navigation ul {
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    
+    .main-navigation li {
+        flex-shrink: 1;
+    }
+    
+    .main-navigation a {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        max-width: 120px;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1920px) {
+    .main-navigation a {
+        font-size: 1.1rem;
+        padding: 14px 18px;
+        max-width: 140px;
+    }
+}
+
+/* ====================== */
+/* TITLE CENTERING FIXES */
+/* ====================== */
+
+/* Center titles and descriptions on large screens */
+@media (min-width: 992px) {
+    .course-hero .container,
+    .service-hero .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .course-hero h1,
+    .service-hero h1 {
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    .course-hero p,
+    .service-hero p {
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+}
+
+/* ====================== */
+/* CALL NOW BUTTON FIXES */
+/* ====================== */
+
+/* Ensure all call buttons work properly */
+a[href^="tel:"] {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+a[href^="tel:"]:hover {
+    color: var(--secondary-color);
+}
+
+/* WhatsApp button styling */
+a[href^="https://wa.me/"] {
+    text-decoration: none;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+a[href^="https://wa.me/"]:hover {
+    color: #25D366;
+}
