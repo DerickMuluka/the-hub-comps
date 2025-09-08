@@ -14,13 +14,6 @@ Welcome to **The Hub Computers & Cyber Services** — your go-to destination for
 
 ---
 
-##  Live Demo
-
-Experience the platform live: [**Visit The Hub Computers**][live-link]  
-*(Please replace `[live-link]` with your actual deployed URL once available.)*
-
----
-
 ##  Setup Instructions
 
 1. **Clone the repository**
